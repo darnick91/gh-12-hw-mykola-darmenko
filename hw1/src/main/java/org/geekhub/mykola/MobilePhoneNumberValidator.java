@@ -34,7 +34,7 @@ public class MobilePhoneNumberValidator {
                         System.out.println(i + 1 + "st " + "round of calculation, sum is: " + sum);
                         if (sum > 0 && sum < 10) {
                             isFinished = false;
-                            checkForResult(sum);
+                            displayResult(sum);
                         }
                     }
                 }
@@ -56,7 +56,7 @@ public class MobilePhoneNumberValidator {
         return sum;
     }
 
-    private void checkForResult(int sum) {
+    private void displayResult(int sum) {
         switch (sum) {
             case 1:
                 System.out.println("Final result is: One");
