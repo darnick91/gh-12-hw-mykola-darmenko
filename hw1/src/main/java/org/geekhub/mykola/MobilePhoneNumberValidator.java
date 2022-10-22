@@ -25,21 +25,16 @@ public class MobilePhoneNumberValidator {
         if (conditionTypeOne(line) || (conditionTypeTwo(line) && conditionTypeThree(line))) {
             System.out.println("Phone number is correct.");
             try {
+                boolean isFinished = true;
                 long numb = Long.parseLong(line.trim());
-                int firstSum = getSum(numb);
-                System.out.println("1st round of calculation, sum is: " + firstSum);
-                if (firstSum > 0 && firstSum < 10) {
-                    checkForResult(firstSum);
-                } else {
-                    int secondSum = getSum(firstSum);
-                    System.out.println("2st round of calculation, sum is: " + secondSum);
-                    if (secondSum > 0 && secondSum < 10) {
-                        checkForResult(secondSum);
-                    } else {
-                        int thirdSum = getSum(secondSum);
-                        System.out.println("3st round of calculation, sum is: " + thirdSum);
-                        if (thirdSum > 0 && thirdSum < 10) {
-                            checkForResult(thirdSum);
+                while (isFinished) {
+                    for (int i = 0; isFinished; i++) {
+                        int sum = getSum(numb);
+                        numb = sum;
+                        System.out.println(i + 1 + "st " + "round of calculation, sum is: " + sum);
+                        if (sum > 0 && sum < 10) {
+                            isFinished = false;
+                            checkForResult(sum);
                         }
                     }
                 }
@@ -50,6 +45,7 @@ public class MobilePhoneNumberValidator {
             System.out.println("Phone number is incorrect. Please enter the phone number: ");
             validatePhoneNumber();
         }
+
     }
 
     private int getSum(long numb) {
