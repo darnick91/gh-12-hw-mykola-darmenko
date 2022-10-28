@@ -6,6 +6,11 @@ public class Square extends Shape {
         this.side = side;
     }
 
+    public void showAdditionalInfo() {
+        Shape triangle = new Triangle(side, side, Math.sqrt(side * side + side * side));
+        triangle.showInfo();
+    }
+
     @Override
     double calculateArea() {
         return side * side;

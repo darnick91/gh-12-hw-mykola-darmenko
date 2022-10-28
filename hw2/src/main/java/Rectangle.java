@@ -7,6 +7,10 @@ public class Rectangle extends Shape {
         this.width = width;
         this.height = height;
     }
+    public void showAdditionalInfo() {
+        Shape triangle = new Triangle(width, height, Math.sqrt(width * width + height * height));
+        triangle.showInfo();
+    }
 
     @Override
     double calculateArea() {

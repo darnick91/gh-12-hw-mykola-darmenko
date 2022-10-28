@@ -10,26 +10,25 @@ public class Runner {
         switch (sc.nextLine()) {
             case "Circle":
                 System.out.println("Please enter radius: ");
-                Shape circle = new Circle(sc.nextDouble());
+                double radius = sc.nextDouble();
+                Shape circle = new Circle(radius);
                 circle.showInfo();
                 break;
             case "Square":
                 System.out.println("Please enter side: ");
                 double side = sc.nextDouble();
-                Shape square = new Square(side);
-                Shape triangleOfSquare = new Triangle(side, side, Math.sqrt(side * side + side * side));
+                Square square = new Square(side);
                 square.showInfo();
-                triangleOfSquare.showInfo();
+                square.showAdditionalInfo();
                 break;
             case "Rectangle":
                 System.out.println("Please enter width: ");
                 double width = sc.nextDouble();
                 System.out.println("Please enter height: ");
                 double height = sc.nextDouble();
-                Shape rectangle = new Rectangle(width, height);
-                Shape triangleOfRectangle = new Triangle(width, height, Math.sqrt(width * width + height * height));
+                Rectangle rectangle = new Rectangle(width, height);
                 rectangle.showInfo();
-                triangleOfRectangle.showInfo();
+                rectangle.showAdditionalInfo();
                 break;
             case "Triangle":
                 System.out.println("Please enter side 'a': ");
