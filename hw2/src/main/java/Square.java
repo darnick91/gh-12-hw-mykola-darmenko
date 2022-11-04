@@ -1,15 +1,13 @@
 public class Square extends Shape {
 
-    protected final double side;
+    private final double side;
+    private final Triangle triangle;
 
     public Square(double side) {
         this.side = side;
+        this.triangle = new Triangle(side, side);
     }
 
-    public void showAdditionalInfo() {
-        Shape triangle = new Triangle(side, side, Math.sqrt(side * side + side * side));
-        triangle.showInfo();
-    }
 
     @Override
     double calculateArea() {
@@ -19,5 +17,11 @@ public class Square extends Shape {
     @Override
     double calculatePerimeter() {
         return side * 4;
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println(this);
+        System.out.println(triangle);
     }
 }

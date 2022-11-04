@@ -4,9 +4,7 @@ public abstract class Shape {
 
     abstract double calculatePerimeter();
 
-    public void showInfo() {
-        System.out.println(this);
-    }
+    abstract void showInfo();
 
     public String toString() {
         return this.getClass().getName() + " area is: " + this.calculateArea()

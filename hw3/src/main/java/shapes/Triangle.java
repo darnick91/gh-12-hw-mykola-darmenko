@@ -1,4 +1,9 @@
-public class Triangle extends Shape {
+package shapes;
+
+import interfaces.PrintableShape;
+import interfaces.Shapeable;
+
+public class Triangle implements Shapeable, PrintableShape {
 
     private final double a;
     private final double b;
@@ -23,22 +28,22 @@ public class Triangle extends Shape {
     }
 
     @Override
-    double calculateArea() {
+    public double calculateArea() {
         double s = calculatePerimeter() / 2;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
-
     }
 
     @Override
-    double calculatePerimeter() {
+    public double calculatePerimeter() {
         return a + b + c;
     }
 
     @Override
-    public void showInfo() {
+    public void shapeInfo() {
         if (isTriangleExist(a, b, c)) {
             System.out.println("Triangle does not exist");
         } else
-            System.out.println(this);
+            System.out.println("Triangle area is: " + this.calculateArea()
+                    + "\nTriangle perimeter is: " + this.calculatePerimeter());
     }
 }

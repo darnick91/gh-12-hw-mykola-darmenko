@@ -1,6 +1,6 @@
 public class Circle extends Shape {
 
-    protected final double radius;
+    private final double radius;
 
     public Circle(double radius) {
         this.radius = radius;
@@ -14,5 +14,10 @@ public class Circle extends Shape {
     @Override
     double calculatePerimeter() {
         return Math.PI * radius * 2;
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println(this);
     }
 }

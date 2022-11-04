@@ -1,15 +1,13 @@
 public class Rectangle extends Shape {
 
-    protected final double width;
-    protected final double height;
+    private final double width;
+    private final double height;
+    private final Triangle triangle;
 
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
-    }
-    public void showAdditionalInfo() {
-        Shape triangle = new Triangle(width, height, Math.sqrt(width * width + height * height));
-        triangle.showInfo();
+        this.triangle = new Triangle(width, height);
     }
 
     @Override
@@ -20,5 +18,11 @@ public class Rectangle extends Shape {
     @Override
     double calculatePerimeter() {
         return (width + height) * 2;
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println(this);
+        System.out.println(triangle);
     }
 }
